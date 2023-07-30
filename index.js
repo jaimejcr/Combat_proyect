@@ -71,15 +71,34 @@ return enemyPower
 
     };
 
-    function enemyAtack (){
+    function enemyAtack (personaje){
         
         const enemyPPower = enemyCharacter();
         
-        const enemyAtack = {
+        const enemyAtackLevels = {
             hp: enemyPPower.hp,
             str: enemyPPower.str,
             def: enemyPPower.def
         }
-        
+        const eAtack = enemyAtack.str - personaje.def;
+        personaje.hp -= eAtack
+        return personaje
     }
-    enemyAtack()
+
+    function myAtack (enemyPower){
+        
+        const myPowerAtack = myCharacter();
+        
+        const atackLevels = {
+            hp: myPowerAtack.hp,
+            str: myPowerAtack.str,
+            def: myPowerAtack.def
+        }
+        const teamAtack = personaje.str - enemyAtack.def;
+        enemyAtack.hp -= teamAtack;
+        return enemyPower
+        
+        
+        
+    } 
+    
